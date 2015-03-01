@@ -6,5 +6,14 @@ The repo will be updated frequently to include notes, information, and visual re
 
 <img src="https://raw.githubusercontent.com/andreajeka/CUDAThreadIndexing/master/images/1dgrid1dblock.png" width="500px" height="312px" alt="1DGrid1DBlock"/>
 ```
-  int index = blockIdx.x * blockDim.x + threadIdx.x;
+int index = blockIdx.x * blockDim.x + threadIdx.x;
+```
+
+
+
+<img src="https://raw.githubusercontent.com/andreajeka/CUDAThreadIndexing/master/images/1dgrid2dblock.png" width="500px" height="313px" alt="1DGrid2DBlock"/>
+```
+// Specify the index for block scope before going to thread scope
+int index = blockIdx.x * blockDim.x * blockDim.y + 
+            threadIdx.y * blockDim.x + threadIdx.x;
 ```
