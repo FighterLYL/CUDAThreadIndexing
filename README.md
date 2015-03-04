@@ -17,3 +17,11 @@ int index = blockIdx.x * blockDim.x + threadIdx.x;
 int index = blockIdx.x * blockDim.x * blockDim.y + 
             threadIdx.y * blockDim.x + threadIdx.x;
 ```
+
+
+<img src="https://raw.githubusercontent.com/andreajeka/CUDAThreadIndexing/master/images/1dgrid3dblock.png" width="500px" height="366px" alt="1DGrid2DBlock"/>
+```
+int index = blockIdx.x * blockDim.x * blockDim.y * blockDim.z 
+	 + threadIdx.z * blockDim.y * blockDim.x + 
+	 threadIdx.y * blockDim.x + threadIdx.x;
+```
